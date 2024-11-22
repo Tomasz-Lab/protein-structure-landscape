@@ -1,10 +1,3 @@
-
-# Data sources
-
-- AFDB: Based on the lists of light and dark proteins stored in https://afdb-cluster.steineggerlab.workers.dev/, we downloaded AlphaFold models using gsutil API directly from the AFDB (see details here: https://github.com/google-deepmind/alphafold/tree/main/afdb) (last access: Feb 14  2024).
-- ESMAtlas: We downloaded `foldcomp` files (regular expression: `highquality_clust30.*`) directly from https://foldcomp.steineggerlab.workers.dev/ (last access:  Jan 23 2024).
-- MIP: We downloaded Zenodo archive from https://zenodo.org/records/6611431 (last access:  Jan 26 2024).
-
 # Structural clustering
 
 Each dataset (AFDB light, AFDB dark, ESMAtlas, MIP)  has been clustered independently, using `foldseek`. Subsequently, cluster representatives and MIP singletons have been clustered, again, with `foldseek`.  Optimal parameters (i.e. the ones used in our work) can be found in Table S2 in the Supplement. Below we provide example code:
@@ -155,7 +148,6 @@ X_norm = (X.T / X.sum(axis=1)).T
 # np.save(OUT_PATH / 'indices_concatenated.npy', indices)
 ```
 
-
 ## PacMAP reduction
 
 2D representations have been obtained using PaCMAP:
@@ -170,4 +162,3 @@ X_pacmap_normed = embedding_2D_normed.fit_transform(X_normed, init="pca")
 ```
 
 Optimal parameters have been chosen with grid search (see "Structure space / PaCMAP grid search" section in the Supplement for details).
-
