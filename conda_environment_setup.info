@@ -1,0 +1,7 @@
+# Setting-up conda environment:
+conda create -n <env_name> pandas seaborn colorcet scipy fastparquet
+
+# Add kernel to jupyter-lab (optional):
+conda activate <env_name>
+conda install ipykernel
+python -m ipykernel install --user --name <env_name>
