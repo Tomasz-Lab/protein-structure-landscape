@@ -6,6 +6,25 @@ Szczerbiak P, Szydlowski L, Wydmański W, Renfrew PD, Koehler Leman J, Kosciolek
 
 The repository contains data, scripts and notebooks to reproduce main-text Figures and most Supplementary Figures. 
 
+## Content
+
+- `data`
+     - Contains Parquet files used to reproduce the results presented in the paper. These can be accessed using the `pandas.read_parquet('{filename}.parquet')` function from the Pandas Python library.
+     - Also includes intermediate files (CSV, Pickle) used by the notebooks (see below).
+- `notebooks`
+    - `Figure_*.ipynb`: Reproduces the figures from the paper.
+    - `data-loader.ipynb`: Describes the contents of each Parquet file and demonstrates how to load them.
+    - `commands.md`: A collection of commands used for clustering, generating embeddings, and performing dimensionality reduction.
+    - `embeddings.ipynb`: Generates Geometricus embeddings for the ProtGPT and BFVD datasets. The notebook can be easily adapted for other datasets.
+    - `dimensionality_reduction.ipynb`: Performs dimensionality reduction on the ProtGPT and BFVD embeddings. Also adaptable for other datasets.
+
+- `plots` 
+    - Contains an interactive Sankey diagram (HTML format), referenced in the `Cluster heterogeneity` section of the supplementary materials.
+
+- zconda_environment_setup.info:` Provides instructions for setting up the Python Conda environment required to run the notebooks.
+
+**Note:** To run `embeddings.ipynb` and `dimensionality_reduction.ipynb` you must first download the `embeddings.zip` file from the Figshare data repository (https://dx.doi.org/10.6084/m9.figshare.27203073), unzip it, and place the contents in the `data/` folder.
+
 ## Novel methods
 The source code for new methods and tools developed during the research is available in dedicated data repositories:
 
@@ -24,13 +43,21 @@ We analyzed datasets coming from:
 
 The web server is available at: https://protein-structure-landscape.sano.science. 
 
-It currently allows for:   
-- structure search by ID
-- structure visualization with PyMOL
-- filtering based on:
-    - database (AFDB, ESMAtlas, MIP)
+It currently supports the following features:
+- Structure search by ID or Gene Ontology (GO) function names
+- Interactive structure visualization using PyMOL
+- Download of structures in PDB format
+- Filtering options, including:
+    - taxonomy
+    - source database (AFDB, ESMAtlas, MIP)
     - superCOG functional category
     - protein length
     - pLDDT (for AFDB models only)
+
+When a protein is selected or searched, the server displays:
+- Detailed information about the representative structure
+- Location of the representative structure in the structural landscape
+- A 3D visualization of the structure
+- DeepFRI v1.0 function predictions
 
 The web server will be continuously improved.
