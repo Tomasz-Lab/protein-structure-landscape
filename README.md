@@ -19,9 +19,9 @@ The repository contains data, scripts and notebooks to reproduce main-text Figur
     - `dimensionality_reduction.ipynb`: Performs dimensionality reduction on the ProtGPT and BFVD embeddings. Also adaptable for other datasets.
 
 - `plots` 
-    - Contains an interactive Sankey diagram (HTML format), referenced in the `Cluster heterogeneity` section of the supplementary materials.
+    - Contains an interactive Sankey diagram (`sankey_diagram.html`), referenced in the `Cluster heterogeneity` section of the supplementary materials as well as interactive version of Figure 6B (`esm_biomes.html`).
 
-- zconda_environment_setup.info:` Provides instructions for setting up the Python Conda environment required to run the notebooks.
+- `zconda_environment_setup.info`: Provides instructions for setting up the Python Conda environment required to run the notebooks.
 
 **Note:** To run `embeddings.ipynb` and `dimensionality_reduction.ipynb` you must first download the `embeddings.zip` file from the Figshare data repository (https://dx.doi.org/10.6084/m9.figshare.27203073), unzip it, and place the contents in the `data/` folder.
 
