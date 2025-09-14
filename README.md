@@ -2,7 +2,7 @@
 
 This is a companion repository to the paper:
 
-Szczerbiak P, Szydlowski L, Wydmański W, Renfrew PD, Koehler Leman J, Kosciolek T. Large protein databases reveal structural complementarity and functional locality. bioRxiv, https://doi.org/10.1101/2024.08.14.607935 (2024).
+Szczerbiak P, Szydlowski LM, Wydmański W, Renfrew PD, Koehler Leman J, Kosciolek T. Large protein databases reveal structural complementarity and functional locality. Nat Commun 16, 7925 (2025). https://doi.org/10.1038/s41467-025-63250-3
 
 The repository contains data, scripts and notebooks to reproduce main-text Figures and most Supplementary Figures. 
 
